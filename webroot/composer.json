@@ -77,6 +77,9 @@
         ],
         "csfixer:dryrun": [
             "vendor/bin/php-cs-fixer fix --using-cache=no -vvv --diff --ansi  --dry-run"
+        ],
+        "twigcs": [
+            "vendor/bin/twigcs templates --ansi"
         ]
     },
     "conflict": {
@@ -91,6 +94,7 @@
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.86",
+        "friendsoftwig/twigcs": "^6.5",
         "phpstan/extension-installer": "^1.4",
         "phpstan/phpstan": "^2.1",
         "phpstan/phpstan-doctrine": "^2.0",
