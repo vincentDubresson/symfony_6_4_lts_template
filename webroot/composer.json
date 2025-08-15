@@ -21,6 +21,7 @@
         "symfony/mailer": "6.4.*",
         "symfony/monolog-bundle": "^3.10",
         "symfony/runtime": "6.4.*",
+        "symfony/security-bundle": "6.4.*",
         "symfony/twig-bundle": "6.4.*",
         "symfony/yaml": "6.4.*",
         "twig/cssinliner-extra": "^3.21",
