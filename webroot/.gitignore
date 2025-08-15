@@ -6,6 +6,7 @@
 /phpstan.neon
 
 /config/secrets/prod/prod.decrypt.private.php
+/node_modules/
 /public/bundles/
 /tmp/phpstan/
 /var/

@@ -45,7 +45,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $email = null;
 
     /**
-     * @var list<string> The user roles
+     * @var array<string> $roles The user roles
      */
     #[ORM\Column(type: Types::JSON, nullable: false)]
     private array $roles = [];
@@ -75,6 +75,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setFirstname(?string $firstname): static
     {
         $this->firstname = $firstname;
+
         return $this;
     }
 
@@ -86,6 +87,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setLastname(?string $lastname): static
     {
         $this->lastname = $lastname;
+
         return $this;
     }
 
@@ -97,6 +99,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setEmail(string $email): static
     {
         $this->email = $email;
+
         return $this;
     }
 
@@ -109,12 +112,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $roles = $this->roles;
         $roles[] = 'ROLE_USER';
+
         return array_unique($roles);
     }
 
-    public function setRoles(array $roles): static
+    public function setRoles(string $role): static
     {
-        $this->roles = $roles;
+        $this->roles = array_unique(array_merge($this->roles, [$role]));
+
         return $this;
     }
 
@@ -126,6 +131,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setPassword(string $password): static
     {
         $this->password = $password;
+
         return $this;
     }
 
