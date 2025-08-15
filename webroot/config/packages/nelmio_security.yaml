@@ -37,6 +37,10 @@ nelmio_security:
         - 'none'
       script-src:
         - 'self'
+        - 'data:'
+        - 'blob:'
+        - 'unsafe-inline'
+        - 'https://ga.jspm.io'
       style-src:
         - 'self'
         - 'unsafe-inline'
