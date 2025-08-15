@@ -1,0 +1,13 @@
+twig:
+  file_name_pattern: '*.html.twig'
+  default_path: '%kernel.project_dir%/templates'
+  paths:
+    'assets/images': images
+  form_themes:
+  # Add here form themes
+  globals:
+  # Add globals here
+
+when@test:
+  twig:
+    strict_variables: true

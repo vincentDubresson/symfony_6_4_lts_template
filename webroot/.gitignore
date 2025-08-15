@@ -1,0 +1,32 @@
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/phpstan.neon
+
+/config/secrets/prod/prod.decrypt.private.php
+/node_modules/
+/public/bundles/
+/tmp/phpstan/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+###> symfony/apache-pack ###
+/public/.htaccess
+###< symfony/apache-pack ###
+
+###> phpstan/phpstan ###
+phpstan.neon
+###< phpstan/phpstan ###
+
+###> friendsofphp/php-cs-fixer ###
+/.php-cs-fixer.php
+/.php-cs-fixer.cache
+###< friendsofphp/php-cs-fixer ###
+
+###> symfony/asset-mapper ###
+/public/assets/
+/assets/vendor/
+###< symfony/asset-mapper ###
