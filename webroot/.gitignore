@@ -3,8 +3,11 @@
 /.env.local
 /.env.local.php
 /.env.*.local
+/phpstan.neon
+
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
+/tmp/phpstan/
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
@@ -12,3 +15,7 @@
 ###> symfony/apache-pack ###
 /public/.htaccess
 ###< symfony/apache-pack ###
+
+###> phpstan/phpstan ###
+phpstan.neon
+###< phpstan/phpstan ###
