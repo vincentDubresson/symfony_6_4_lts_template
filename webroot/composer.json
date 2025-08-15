@@ -1,4 +1,6 @@
 {
+    "name": "symfony/lts-template",
+    "description": "Symfony LTS Template",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",
@@ -77,6 +79,12 @@
         "post-update-cmd": [
             "@auto-scripts"
         ],
+        "yaml:lint": [
+          "php bin/console lint:yaml config"
+        ],
+        "twig:lint": [
+          "php bin/console lint:twig templates"
+        ],
         "phpstan": [
             "vendor/bin/phpstan analyse src --no-progress --ansi --level=9"
         ],
@@ -88,6 +96,9 @@
         ],
         "phpmnd": [
             "vendor/bin/phpmnd src"
+        ],
+        "execute:ci": [
+            "./executeCiTasks.sh"
         ]
     },
     "conflict": {
