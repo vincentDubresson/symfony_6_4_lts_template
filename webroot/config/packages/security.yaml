@@ -16,6 +16,15 @@ security:
         main:
             lazy: true
             provider: app_user_provider
+            custom_authenticators:
+              - App\Security\LoginFormAuthenticator
+            logout:
+                path: app_security_logout
+                # where to redirect after logout
+                target: app_homepage
+            login_throttling:
+                max_attempts: 5
+                interval: '5 minutes'
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
@@ -26,8 +35,14 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/_profiler, roles: PUBLIC_ACCESS }
+        - { path: ^/_wdt, roles: PUBLIC_ACCESS }
+        - { path: ^/$, roles: PUBLIC_ACCESS }
+        - { path: ^/se-connecter$, roles: PUBLIC_ACCESS }
+        - { path: ^/logout, role: PUBLIC_ACCESS }
+        # - { path: ^/reset-password, roles: PUBLIC_ACCESS }
+    access_decision_manager:
+      strategy: unanimous
 
 when@test:
     security:
